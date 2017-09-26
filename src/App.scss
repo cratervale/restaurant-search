@@ -1,0 +1,151 @@
+.App {
+
+  li{
+    list-style: none;
+  }
+  .section-header{
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  ul{
+    padding:0;
+    margin: 0;
+  }
+
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+
+
+// colors
+$header-blue: #1C688E;
+$grey: #ccc;
+$orange: #FFAB66;
+$black: #333;
+
+$header-size:16px;
+
+$text-size: 14px;
+
+
+$vertical-spacer: 2rem;
+
+.search-header{
+  background-color: $header-blue;
+  padding: 1.5rem;
+  &__input{
+    width: 90%;
+    padding:.78rem;
+    font-size: .9rem;
+    border-radius: 4px;
+    border:none;
+  }
+}
+
+.search-results{
+  &__container{
+    display: flex;
+  }
+}
+
+.search-results-list{
+  &__list{
+
+    &-item{
+      cursor: pointer;
+      border-radius: 4px;
+      display: flex;
+      justify-content: space-between;
+      padding: 4px;
+
+      &-selected{
+          color: #FFF;
+          background-color: $header-blue;
+      }
+    }
+  }
+}
+
+.search-results-master{
+  &__container{
+    flex:1;
+    border-right: 1px solid $grey;
+    padding: 1rem;
+  }
+
+  &__cuisine{}
+
+  &__rating{
+    margin-top:$vertical-spacer;
+  }
+
+  &__payment{
+    margin-top:$vertical-spacer;
+  }
+
+
+}
+
+.search-results-detail{
+  flex:3;
+  &__header{}
+  &__list{
+    margin:2rem !important;
+  }
+  &__list-item{
+    cursor: pointer;
+    display:flex;
+    justify-content: flex-start;
+    &-image{
+
+    }
+
+    &-details{
+      margin-left: 1rem;
+      display:flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      padding-bottom: .78rem;
+      font-size: $text-size;
+      color: $grey;
+
+      &-header{
+        font-size:$header-size;
+        color: $black;
+        font-weight: 500;
+      }
+      &-rating{
+        display: flex;
+        justify-content: space-between;
+        margin-top: .5rem;
+        &--rating{
+          color:$orange;
+        }
+        &--stars{}
+        &--reviews{}
+      }
+      &-cuisine{
+        margin-top: .5rem;
+      }
+    }
+
+
+  }
+  &__show-more-button{}
+}
