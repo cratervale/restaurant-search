@@ -1,27 +1,26 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import lodash from 'lodash'
 
+const CuisineFilterItem = ({name, count}) => (
+  <li className="search-results-list__list-item search-results-list__list-item">
+    <span className="">{name}</span>
+    <span className="">{count}</span>
+  </li>
+)
 
 class CuisineFilter extends Component{
 
   render(){
-    const {currentTodo} = this.props;
+    const {cuisineTypes} = this.props;
+    console.log(cuisineTypes)
     return (
       <section className="search-results-master__cuisine">
         <h2 className="section-header">Cuisine/Food Type</h2>
         <ul className="search-results-list__list">
-          <li className="search-results-list__list-item search-results-list__list-item-selected">
-            <span className="">Italian</span>
-            <span className="">70</span>
-          </li>
-          <li className="search-results-list__list-item">
-            <span className="">Italian</span>
-            <span className="">70</span>
-          </li>
-          <li className="search-results-list__list-item">
-            <span className="">Italian</span>
-            <span className="">70</span>
-          </li>
+          {cuisineTypes.map(cuisine => (
+            <CuisineFilterItem name={cuisine.name} count={cuisine.count}/>
+          ))}
         </ul>
       </section>
     )
@@ -29,5 +28,5 @@ class CuisineFilter extends Component{
 }
 
 export default connect(
-  (state) => ({}),
+  (state) => ({cuisineTypes : state.search.cuisineTypes}),
 )(CuisineFilter)

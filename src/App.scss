@@ -104,16 +104,35 @@ $vertical-spacer: 2rem;
 
 .search-results-detail{
   flex:3;
-  &__header{}
-  &__list{
-    margin:2rem !important;
+  margin:2rem;
+  color: $grey;
+
+
+  &__header{
+    margin-bottom:1.3rem;
   }
+  &__header:after{
+    content:'';
+    display:inline-block;
+    width:100%; height:100%;
+    margin-right:-100%;
+    margin-left:20px;
+    border-bottom:1px solid $grey;
+
+  }
+
+  &__list{
+
+  }
+
   &__list-item{
     cursor: pointer;
     display:flex;
     justify-content: flex-start;
-    &-image{
+    margin-bottom:1.3rem;
 
+    &-image{
+      border-radius: 4px;
     }
 
     &-details{
@@ -132,13 +151,19 @@ $vertical-spacer: 2rem;
       }
       &-rating{
         display: flex;
-        justify-content: space-between;
+        justify-content:flex-start;
+        align-items: center;
         margin-top: .5rem;
+        max-width: 400px;
         &--rating{
           color:$orange;
         }
-        &--stars{}
-        &--reviews{}
+        &--stars{
+          margin-left:.78rem;
+        }
+        &--reviews{
+          margin-left:.78rem;
+        }
       }
       &-cuisine{
         margin-top: .5rem;
@@ -148,4 +173,20 @@ $vertical-spacer: 2rem;
 
   }
   &__show-more-button{}
+}
+
+.star-ratings-sprite {
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
+  width: 110px;
+  position:relative;
+
+
+  &-rating {
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
+    background-position: 0 100%;
+    float: left;
+    height: 21px;
+    display:block;
+  }
+
 }

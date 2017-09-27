@@ -1,1 +1,0 @@
-import algoliasearch from 'algoliasearch'

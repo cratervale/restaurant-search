@@ -15,7 +15,7 @@ class App extends Component {
         <article className="search-results__container">
           <section className="search-results-master__container">
             <CuisineFilter />
-            <RatingFilter />
+            {/* <RatingFilter /> */}
             <PaymentOptionsFilter />
           </section>
             <RestaurantResultList />
