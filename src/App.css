@@ -1,32 +1,35 @@
+html {
+  background-image: url("/img/background.png");
+  height: 100%; }
+
 .App li {
   list-style: none; }
 
 .App .section-header {
-  font-size: 1rem;
-  font-weight: 400; }
+  font-size: 16px;
+  font-weight: 600; }
 
 .App ul {
   padding: 0;
   margin: 0; }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px; }
+.App a {
+  text-decoration: none;
+  color: inherit; }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white; }
-
-.App-intro {
-  font-size: large; }
+.App-Container {
+  background-color: white;
+  max-width: 1200px;
+  box-shadow: 0 0 16px #ccc;
+  margin: auto;
+  margin-top: 2rem;
+  max-height: 700px; }
 
 .search-header {
   background-color: #1C688E;
   padding: 1.5rem; }
   .search-header__input {
-    width: 90%;
+    width: 98%;
     padding: .78rem;
     font-size: .9rem;
     border-radius: 4px;
@@ -40,7 +43,10 @@
   border-radius: 4px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 4px; }
+  .search-results-list__list-item:hover {
+    background-color: #eee; }
   .search-results-list__list-item-selected {
     color: #FFF;
     background-color: #1C688E; }
@@ -48,7 +54,10 @@
 .search-results-master__container {
   flex: 1;
   border-right: 1px solid #ccc;
-  padding: 1rem; }
+  padding: 1rem;
+  max-height: 540px;
+  overflow-y: scroll;
+  overflow-x: hidden; }
 
 .search-results-master__rating {
   margin-top: 2rem; }
@@ -59,7 +68,11 @@
 .search-results-detail {
   flex: 3;
   margin: 2rem;
-  color: #ccc; }
+  color: #ccc;
+  max-height: 540px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-width: 100%; }
   .search-results-detail__header {
     margin-bottom: 1.3rem; }
   .search-results-detail__header:after {

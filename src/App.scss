@@ -1,11 +1,32 @@
-.App {
+// colors
+$header-blue: #1C688E;
+$grey: #ccc;
+$lightGrey: #eee;
+$orange: #FFAB66;
+$black: #333;
 
+// sizes
+$header-size:16px;
+$text-size: 14px;
+$max-height-inside: 540px;
+$max-height-outside: 700px;
+
+// spacing
+$vertical-spacer: 2rem;
+
+html{
+  background-image: url('/img/background.png');
+  height:100%;
+
+}
+
+.App {
   li{
     list-style: none;
   }
   .section-header{
-    font-size: 1rem;
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 600;
   }
 
   ul{
@@ -13,44 +34,27 @@
     margin: 0;
   }
 
+  a{
+    text-decoration: none;
+    color:inherit;
+  }
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.App-Container{
+  background-color:white;
+  max-width: 1200px;
+  box-shadow: 0 0 16px $grey;
+  margin:auto;
+  margin-top:$vertical-spacer;
+  max-height: $max-height-outside;
 }
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-
-
-// colors
-$header-blue: #1C688E;
-$grey: #ccc;
-$orange: #FFAB66;
-$black: #333;
-
-$header-size:16px;
-
-$text-size: 14px;
-
-
-$vertical-spacer: 2rem;
 
 .search-header{
   background-color: $header-blue;
   padding: 1.5rem;
+
   &__input{
-    width: 90%;
+    width: 98%;
     padding:.78rem;
     font-size: .9rem;
     border-radius: 4px;
@@ -72,7 +76,12 @@ $vertical-spacer: 2rem;
       border-radius: 4px;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       padding: 4px;
+
+      &:hover{
+        background-color: $lightGrey;
+      }
 
       &-selected{
           color: #FFF;
@@ -87,6 +96,9 @@ $vertical-spacer: 2rem;
     flex:1;
     border-right: 1px solid $grey;
     padding: 1rem;
+    max-height: $max-height-inside;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
 
   &__cuisine{}
@@ -98,19 +110,21 @@ $vertical-spacer: 2rem;
   &__payment{
     margin-top:$vertical-spacer;
   }
-
-
 }
 
 .search-results-detail{
   flex:3;
   margin:2rem;
   color: $grey;
-
+  max-height: $max-height-inside;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-width: 100%;
 
   &__header{
     margin-bottom:1.3rem;
   }
+
   &__header:after{
     content:'';
     display:inline-block;
@@ -118,12 +132,9 @@ $vertical-spacer: 2rem;
     margin-right:-100%;
     margin-left:20px;
     border-bottom:1px solid $grey;
-
   }
 
-  &__list{
-
-  }
+  &__list{}
 
   &__list-item{
     cursor: pointer;
@@ -149,29 +160,33 @@ $vertical-spacer: 2rem;
         color: $black;
         font-weight: 500;
       }
+
       &-rating{
         display: flex;
         justify-content:flex-start;
         align-items: center;
         margin-top: .5rem;
         max-width: 400px;
+
         &--rating{
           color:$orange;
         }
+
         &--stars{
           margin-left:.78rem;
         }
+
         &--reviews{
           margin-left:.78rem;
         }
       }
+
       &-cuisine{
         margin-top: .5rem;
       }
     }
-
-
   }
+
   &__show-more-button{}
 }
 
@@ -180,7 +195,6 @@ $vertical-spacer: 2rem;
   width: 110px;
   position:relative;
 
-
   &-rating {
     background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
     background-position: 0 100%;
@@ -188,5 +202,4 @@ $vertical-spacer: 2rem;
     height: 21px;
     display:block;
   }
-
 }

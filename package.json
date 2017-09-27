@@ -7,6 +7,7 @@
     "lodash": "^4.17.4",
     "node-sass-chokidar": "^0.0.3",
     "react": "^15.6.2",
+    "react-checkbox-group": "^3.3.1",
     "react-dom": "^15.6.2",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",

@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {liveSearch} from '../reducers/search';
+import {liveSearch, setLatLng} from '../reducers/search';
 
 
 class SearchHeader extends Component{
@@ -9,17 +9,24 @@ class SearchHeader extends Component{
     this.props.liveSearch(val)
   }
 
+
+  componentDidMount(){
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(this.props.setLatLng);
+      }
+  }
+
   render(){
     const{currentSearch} = this.props
     return (
-      <form className="search-header">
+      <div className="search-header">
         <input type="text" className="search-header__input" value={currentSearch} onChange={this.handleInputChange} placeholder = "Search for Restaurants by Name, Cuisine, Location" />
-      </form>
+      </div>
     )
   }
 }
 
 export default connect(
   (state) => ({currentSearch: state.search.currentSearch}),
-  {liveSearch}
+  {liveSearch, setLatLng}
 )(SearchHeader)
